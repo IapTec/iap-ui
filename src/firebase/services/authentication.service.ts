@@ -11,4 +11,8 @@ export class AuthenticationService {
     public login(credential: ICredential) {
         return authenticationFacade.login(credential)
     }
+
+    public delete(id: string) {
+        return authenticationFacade
+    }
 }

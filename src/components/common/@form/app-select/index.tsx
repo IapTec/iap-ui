@@ -32,7 +32,12 @@ const AppSelect: React.FC<AppSelectProps> = props => {
         <Styles.FormGroup className={className || ''}>
             <Styles.Label htmlFor={id}>{label || ''}</Styles.Label>
 
-            <select id={id} {...rest} {...registerValue(id)}>
+            <select
+                id={id}
+                {...rest}
+                {...registerValue(id)}
+                style={{ border: 'none' }}
+            >
                 <option value="">{defaultLabel || 'Selectione'}</option>
                 {data.map((item, index) => (
                     <option key={index} value={item.value as any}>
@@ -40,13 +45,6 @@ const AppSelect: React.FC<AppSelectProps> = props => {
                     </option>
                 ))}
             </select>
-
-            {/* <Styles.Checkbox
-                id={id}
-                {...rest}
-                type="checkbox"
-                {...registerValue(id)}
-            /> */}
         </Styles.FormGroup>
     )
 }

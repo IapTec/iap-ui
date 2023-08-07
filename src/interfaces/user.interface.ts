@@ -1,4 +1,4 @@
-import { DocumentReference } from 'firebase/firestore'
+import { DocumentReference, Timestamp } from 'firebase/firestore'
 
 export interface IUserRole {
     id: number
@@ -6,21 +6,25 @@ export interface IUserRole {
 }
 
 export interface IUserResponse {
-    uuid: string
+    id: string
     email: string
     image: string
     name: string
     active: boolean
+    creationDate: Timestamp
     role: DocumentReference
-    creationDate: string | Date
 }
 
 export interface IUser {
-    uuid: string
+    id: string
     name: string
     email: string
     image: string
     role: IUserRole
     active: boolean
     creationDate: string | Date
+}
+
+export interface IUserForm extends Omit<IUser, 'role'> {
+    role: number
 }

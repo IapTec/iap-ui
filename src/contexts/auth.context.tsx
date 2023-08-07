@@ -1,14 +1,12 @@
-import store from '@/store'
 import { useMapState } from '@/hooks'
 import React, { createContext } from 'react'
 import { UserRole } from '@/enums/user-role.enum'
 import { RouterUltil } from '@/utils/router.ultil'
 import { authActions } from '@/store/reducers/auth.reducer'
-import { AlertService } from '@/services/common/alert.service'
+import { UserService } from '@/firebase/services/user.service'
 import { IAuthState } from '@/store/@interfaces/auth.interface'
 import { ICredential } from '@/interfaces/authentication.interface'
 import { AuthenticationService } from '@/firebase/services/authentication.service'
-import { UserService } from '@/firebase/services/user.service'
 
 interface AuthContextData {
     role: UserRole
@@ -24,7 +22,6 @@ interface IAuthProviderProps {
 
 const routerUltil = new RouterUltil()
 const userService = new UserService()
-const alertService = new AlertService()
 const authenticationService = new AuthenticationService()
 
 const AuthContext = createContext<AuthContextData>({
@@ -39,19 +36,11 @@ const AuthProvider: React.FC<IAuthProviderProps> = ({ children }) => {
     const { token, role } = useMapState<IAuthState>('auth')
     const getIsAdmin = (role: number) => role !== UserRole.Member
 
-    const onManegerLogin = () => {
-        routerUltil.redirectToAdminHome()
-    }
-
-    const onUserLogin = () => {
-        routerUltil.redirectToUserHome()
-    }
-
     const handleUserLogin = (role: number) => {
         const isAdmin = getIsAdmin(role)
 
-        if (isAdmin) onManegerLogin()
-        else onUserLogin()
+        if (isAdmin) routerUltil.redirectToAdminHome()
+        else routerUltil.redirectToUserHome()
     }
 
     const login = async (payload: ICredential) => {

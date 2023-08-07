@@ -5,10 +5,10 @@ const common = {
         gray: '#919191',
         green: '#5EC278',
         yellow: '#FFD410',
-        primary: '#518DE0',
-        secondary: '#E94560',
+        primary: '#ff6200',
+        secondary: '#ffb700',
         gray_light: '#D0D5DD',
-        placeholder: '#34405480',
+        placeholder: '#ffffff80',
         placeholder_icon: '#bdc3ce'
     },
     spacing: {

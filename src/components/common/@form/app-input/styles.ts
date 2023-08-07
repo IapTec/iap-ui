@@ -13,10 +13,9 @@ const Container = styled(AppFormGroup)`
 `
 
 const Wrapper = styled(AppFormGroup)`
-    ${tw`flex border border-solid rounded-xl px-4 transition-all duration-300 mb-0`}
+    ${tw`flex rounded-xl px-4 transition-all duration-300 mb-0`}
     box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
     background: ${({ theme }) => theme.colors.bgSecondary};
-    border-color: ${({ theme }) => theme.colors.gray_light};
 
     ${formControlFill()}
     ${formControlFocus()}

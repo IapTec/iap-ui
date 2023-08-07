@@ -26,8 +26,6 @@ export class AuthenticationFacade extends FirebaseBaseFacade {
 
     public async login(credential: ICredential): Promise<ILoginResponse> {
         try {
-            console.log('CREDENTIAL', this)
-
             const { user } = await this._auth.signInWithEmailAndPassword(
                 this._authApp,
                 credential.email,

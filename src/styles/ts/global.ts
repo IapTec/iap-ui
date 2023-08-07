@@ -15,6 +15,11 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
+  button {
+    ${tw`border-0 cursor-pointer`}
+    background: none;
+  }
+
   body {
     ${tw`text-base`}
     background: ${props => props.theme.colors.bgPrimary};
