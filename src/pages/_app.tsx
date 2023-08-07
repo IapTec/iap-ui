@@ -13,10 +13,10 @@ import { RouterUltil } from '@/utils/router.ultil'
 import AppToast from '@/components/common/app-toast'
 import { ReactNode, useContext, useEffect } from 'react'
 import AppLoading from '@/components/common/app-loading'
-import AuthenticationLayout from '@/layouts/authentication'
 import { PersistGate } from 'redux-persist/integration/react'
 import { AuthContext, AuthProvider } from '@/contexts/auth.context'
 import { UiStateInterface } from '@/store/@interfaces/uiState.interface'
+import '@/styles/css/global.css'
 
 const persistor = persistStore(store)
 const routerUltil = new RouterUltil()

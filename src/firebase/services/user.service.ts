@@ -45,13 +45,15 @@ export class UserService {
             .then(() => userFacade._repository.create(payload))
     }
 
-    public update(payload: IUserResponse, id: string) {
-        payload.role = userRoleFacade.getDocumentRef(String(payload.role))
+    public update(payload: IUserResponse, id: string, getRoleRef = true) {
+        if (getRoleRef)
+            payload.role = userRoleFacade.getDocumentRef(String(payload.role))
+
         return userFacade._repository.update(payload, id)
     }
 
     public delete(user: IUserResponse) {
         user.active = false
-        return this.update(user, user.id)
+        return this.update(user, user.id, false)
     }
 }

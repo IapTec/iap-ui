@@ -55,7 +55,6 @@ const AdminUserRegister: React.FC = () => {
             setLoading(false)
         } catch (error) {
             setLoading(false)
-            console.log(error)
             alertService.error('')
         }
     }
@@ -90,7 +89,7 @@ const AdminUserRegister: React.FC = () => {
                         onClick={back}
                         style={{ background: theme.colors.secondary }}
                     >
-                        Voltar {id}
+                        Voltar
                     </Styles.Button>
 
                     <Styles.Button

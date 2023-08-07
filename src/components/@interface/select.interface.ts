@@ -1,4 +1,4 @@
 export interface ISelectItem {
     label: string
-    value: string | number | boolean
+    value: string | number | boolean | null
 }

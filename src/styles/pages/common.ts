@@ -23,8 +23,13 @@ const View = styled.div``
 
 const Button = styled(AppButton)``
 
+const FilterNav = styled.nav`
+    ${tw`w-full mb-8 flex gap-4 items-center justify-end`}
+`
+
 export default {
     InlineForm,
+    FilterNav,
     Container,
     PageTitle,
     PageNav,
