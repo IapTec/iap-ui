@@ -1,3 +1,4 @@
+import { scrollBar } from '@/styles/ts/mixins/scroll-bar.mixin'
 import styled from 'styled-components'
 import tw from 'twin.macro'
 
@@ -27,6 +28,7 @@ const ModalHeader = styled.div``
 
 const ModalBody = styled.div<CommonProps>`
     ${tw`flex-auto overflow-y-auto overflow-x-hidden`}
+    ${scrollBar('2px')}
 
     ::-webkit-scrollbar-thumb {
         border: 0px solid #ffffff;

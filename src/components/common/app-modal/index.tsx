@@ -16,8 +16,9 @@ const AppModal: React.FC<AppModalInterface> = props => {
         children,
         maxHeight,
         onClickClose,
-        onBackdropClick,
-        containerStyle
+        backdropStyle,
+        containerStyle,
+        onBackdropClick
     } = props
 
     useEffect(() => {
@@ -36,6 +37,7 @@ const AppModal: React.FC<AppModalInterface> = props => {
             {isOpen && (
                 <Styles.Backdrop
                     ref={backdropEl}
+                    style={backdropStyle}
                     onClick={({ target }) => handleBackdropClick(target)}
                 >
                     <Styles.ModalContainer

@@ -12,7 +12,8 @@ const common = {
         placeholder_icon: '#bdc3ce'
     },
     spacing: {
-        headerHeight: '5rem'
+        headerHeight: '5rem',
+        landing_page_header_height: '84px'
     }
 }
 

@@ -1,4 +1,7 @@
 import 'react-toastify/dist/ReactToastify.css'
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
 
 import { createGlobalStyle } from 'styled-components'
 import tw from 'twin.macro'

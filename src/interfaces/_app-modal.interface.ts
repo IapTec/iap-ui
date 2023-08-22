@@ -14,4 +14,6 @@ export interface AppModalInterface {
     children?: ReactNode
     containerStyle?: any
     color?: string
+
+    backdropStyle?: React.CSSProperties
 }

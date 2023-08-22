@@ -8,9 +8,9 @@ const content = [
 
 const theme = {
     fontSize: {
-        sm: '0.75rem',
-        base: '0.875rem',
-        lg: '1.125rem',
+        sm: '0.875rem',
+        base: '1rem',
+        lg: '1.5rem',
         xl: '2.25rem'
     },
     screens: {

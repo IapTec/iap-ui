@@ -53,7 +53,6 @@ export class UserService {
     }
 
     public delete(user: IUserResponse) {
-        user.active = false
-        return this.update(user, user.id, false)
+        return this.update({ ...user, active: false }, user.id, false)
     }
 }
