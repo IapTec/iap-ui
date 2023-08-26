@@ -45,6 +45,14 @@ const ItemsContainer = styled.article`
 
 const Item = styled.div``
 
+const PartnerContainer = styled(AppContainer)`
+    ${tw`w-full flex items-center justify-end gap-4 sm:flex-col`}
+`
+
+const PartnerImage = styled.img`
+    ${tw`h-10`}
+`
+
 export default {
     Text,
     View,
@@ -55,5 +63,7 @@ export default {
     Section,
     TextBold,
     Container,
-    ItemsContainer
+    PartnerImage,
+    ItemsContainer,
+    PartnerContainer
 }

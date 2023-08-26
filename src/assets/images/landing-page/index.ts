@@ -1,3 +1,3 @@
-import HeroBG from './hero-bg.png'
+import HeroBG from './hero-bg.jpg'
 
 export default { HeroBG }

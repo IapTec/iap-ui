@@ -25,7 +25,7 @@ const Header = styled.thead``
 
 const Body = styled.tbody`
     tr {
-        border-top: 1px solid ${({ theme }) => theme.colors.gray_1};
+        border-top: 1px solid ${({ theme }) => theme.colors.gray_light};
     }
 `
 
@@ -38,7 +38,7 @@ const DataCell = styled.td`
 `
 
 const HeaderCell = styled.th`
-    background: ${({ theme }) => theme.colors.gray_light_3};
+    background: ${({ theme }) => theme.colors.gray_light};
 `
 
 export default {

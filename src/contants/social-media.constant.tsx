@@ -1,20 +1,20 @@
-import { FaLinkedinIn } from 'react-icons/fa'
+import { RiFacebookFill } from 'react-icons/ri'
 import { AiOutlineInstagram, AiOutlineYoutube } from 'react-icons/ai'
 
 export const SOCIAL_MEDIA = [
     {
-        title: `Linkedin`,
-        link: `https://br.linkedin.com/company/uxnocode`,
-        icon: <FaLinkedinIn />
-    },
-    {
         title: `Instagram`,
-        link: `https://www.instagram.com/uxnocode/`,
+        link: `https://www.instagram.com/vigiliaapocalipse/`,
         icon: <AiOutlineInstagram />
     },
     {
+        title: `Facebook`,
+        link: `https://www.facebook.com/vigiliaapocalipseoficial/`,
+        icon: <RiFacebookFill />
+    },
+    {
         title: `Youtube`,
-        link: `https://www.youtube.com/channel/UCIfaNhrQIfafc_RvZWGrpaw`,
+        link: `https://www.youtube.com/@apocalipseof`,
         icon: <AiOutlineYoutube />
     }
 ]

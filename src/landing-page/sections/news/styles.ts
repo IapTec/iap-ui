@@ -11,11 +11,11 @@ const Title = styled.h1`
 `
 
 const Subtitle = styled.h4`
-    ${tw`mb-8`}
+    ${tw`mb-8 sm:text-center`}
 `
 
 const Grid = styled.section`
-    ${tw`mt-4 grid grid-cols-4 gap-4`}
+    ${tw`mt-4 grid grid-cols-4 gap-4 sm:grid-cols-1`}
 `
 
 export default {

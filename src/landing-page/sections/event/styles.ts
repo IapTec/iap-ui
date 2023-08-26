@@ -7,11 +7,11 @@ const Container = styled(AppContainer)`
 `
 
 const Title = styled.h1`
-    ${tw`text-xl font-semibold mb-2`}
+    ${tw`text-xl font-semibold mb-2 sm:text-center`}
 `
 
 const Subtitle = styled.h4`
-    ${tw`mb-8`}
+    ${tw`mb-8 sm:text-center`}
 `
 
 const Grid = styled.section`

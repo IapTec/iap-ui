@@ -38,7 +38,7 @@
         "react-toastify": "^9.0.8",
         "redux-persist": "^6.0.0",
         "styled-components": "^5.3.5",
-        "swiper": "^10.1.0",
+        "swiper": "^9.4.1",
         "tailwindcss": "^3.1.8",
         "twin.macro": "^2.8.2",
         "yup": "^0.32.11"

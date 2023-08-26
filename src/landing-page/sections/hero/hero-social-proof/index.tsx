@@ -1,5 +1,6 @@
 import React from 'react'
 import Styles from './styles'
+import LPSocialMedia from '@/landing-page/components/social-media'
 
 const HeroSocialProof: React.FC = () => {
     const items = [
@@ -9,12 +10,12 @@ const HeroSocialProof: React.FC = () => {
             content: <></>
         },
         {
-            title: `4OOO`,
+            title: `4OOO+`,
             subtitle: `Membros`,
             content: <></>
         },
         {
-            title: `30+`,
+            title: `12+`,
             subtitle: `Patrocinadores`,
             content: <></>
         }

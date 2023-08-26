@@ -38,6 +38,9 @@ const ModalPrayer: React.FC<IModalPrayerProps> = props => {
         try {
             setLoading(true, 'Enviando o seu pedido de oração...')
             await prayerService.create({ ...model, active: false } as any)
+            alertService.success(
+                'Pedido de oração enviado com sucesso, já estamos analisando o seu pedido'
+            )
             handleClose()
             reset()
         } catch (error) {
@@ -64,7 +67,7 @@ const ModalPrayer: React.FC<IModalPrayerProps> = props => {
             }}
         >
             <Styles.Form onSubmit={onSubmit}>
-                <Styles.Image src={images.Logo} />
+                <Styles.Image src={images.LogoHorizontalWhite} />
 
                 <Styles.Title>
                     Deposite aqui o seu pedido de oração

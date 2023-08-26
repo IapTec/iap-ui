@@ -20,7 +20,7 @@ const LPSideMenu: React.FC<ISideMenuProps> = props => {
         <AppSideMenu show={show} fullContent showLogo={false}>
             <Styles.Container>
                 <Styles.Header>
-                    <Styles.HeaderImage src={images.Logo} />
+                    <Styles.HeaderImage src={images.LogoHorizontalWhite} />
                     <Styles.HeaderButton onClick={() => onClose()}>
                         <FaArrowLeft />
                     </Styles.HeaderButton>
@@ -36,7 +36,6 @@ const LPSideMenu: React.FC<ISideMenuProps> = props => {
                                 key={index}
                                 onClick={() => onSelect(item)}
                             >
-                                {item.icon}
                                 {item.title}
                             </Styles.Item>
                         ))}

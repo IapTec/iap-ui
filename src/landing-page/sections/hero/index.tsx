@@ -3,6 +3,7 @@ import Styles from './styles'
 import images from '@/assets/images'
 import HeroSocialProof from './hero-social-proof'
 import { LANDING_PAGE_NAVIGATION } from '@/contants/landing-page.contant'
+import LPSocialMedia from '@/landing-page/components/social-media'
 
 const LPHero: React.FC = () => {
     return (
@@ -13,23 +14,30 @@ const LPHero: React.FC = () => {
                         <Styles.View>
                             <Styles.Title>Instituto Apocalipse</Styles.Title>
                             <Styles.Text>
-                                Lorem Ipsum is simply dummy text of the printing
-                                and typesetting industry. Lorem Ipsum has been
-                                the industry's standard dummy text ever since
-                                the 1500s, when an unknown printer took a galley
-                                of type and scrambled it to make a type specimen
-                                book. It has survived not only five centuries,
-                                but also the leap into electronic typesetting,
-                                remaining essentially unchanged. It was
-                                popularised in the 1960s with the release of
-                                Letraset sheets containing Lorem Ipsum passages,
-                                and more recently with desktop publishing
-                                software like Aldus PageMaker including versions
-                                of Lorem Ipsum.
+                                O Instituto Apocalipse teve início no ano de
+                                2012, seu principal objetivo é promover
+                                iniciativas de participação solidária coltada
+                                para a superação da pobreza e da inclusão
+                                social, promovendo ações para desenvolvimento
+                                social de grupo mais vulneráveis da população.
                             </Styles.Text>
+
+                            <Styles.Text className="mt-4">
+                                Temos o apoio de parceiros em toda a região do
+                                Alto Tietê, os quais também contribuem no
+                                evangelismo e no campo espiritual daqueles que
+                                buscam a Deus.
+                            </Styles.Text>
+
+                            <Styles.SocialMediaContainer>
+                                <Styles.Text className="mb-4">
+                                    Acompanhe também em nossas redes sociais
+                                </Styles.Text>
+                                <LPSocialMedia />
+                            </Styles.SocialMediaContainer>
                         </Styles.View>
 
-                        <Styles.Image src={images.Logo} />
+                        <Styles.Image src={images.LogoWhite} />
                     </Styles.Content>
                 </Styles.Container>
             </Styles.ContainerWrapper>

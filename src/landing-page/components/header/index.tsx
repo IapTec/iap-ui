@@ -83,7 +83,10 @@ const LPHeader: React.FC = () => {
         <>
             <Styles.Header style={headerStyle}>
                 <Styles.Container>
-                    <Styles.Image src={images.Logo} onClick={handleClickLogo} />
+                    <Styles.Image
+                        src={images.LogoHorizontalWhite}
+                        onClick={handleClickLogo}
+                    />
 
                     <Styles.Group>
                         {items.map((item, index) => (

@@ -1,17 +1,55 @@
-import React from 'react'
 import Styles from './styles'
-import images from '@/assets/images'
+import React, { useEffect, useState } from 'react'
+import { differenceInMilliseconds } from 'date-fns'
+import { EventService } from '@/firebase/services/event.service'
 import EventCard from '@/landing-page/components/cards/event-card'
+import { IEventResponse } from '@/interfaces/event/event.interface'
 import { LANDING_PAGE_NAVIGATION } from '@/contants/landing-page.contant'
 import HighlightCard from '@/landing-page/components/cards/highlight-card'
 
+const eventService = new EventService()
+
 const LPEvent: React.FC = () => {
-    const currentEvent = {
-        title: `Vigilia`,
-        banner: images.landingPage.HeroBG,
-        description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,`
+    const [events, setEvents] = useState<IEventResponse[]>([])
+    const [nextEvent, setNextEvent] = useState<IEventResponse>(
+        {} as IEventResponse
+    )
+
+    const getNextEvent = (items: IEventResponse[]) => {
+        const currentDate = new Date()
+
+        return items.reduce((closest, current) => {
+            const closestDiff = differenceInMilliseconds(
+                closest.creationDate.toDate(),
+                currentDate
+            )
+
+            const currentDiff = differenceInMilliseconds(
+                current.creationDate.toDate(),
+                currentDate
+            )
+
+            return currentDiff < closestDiff ? current : closest
+        }, items[0])
     }
-    const events = [currentEvent, currentEvent, currentEvent, currentEvent]
+
+    const getEvents = async () => {
+        try {
+            const response = await eventService.getAll()
+
+            const nextEvent = getNextEvent(response)
+            const otherEvents = response.filter(({ id }) => id !== nextEvent.id)
+
+            setEvents(otherEvents)
+            setNextEvent(nextEvent)
+        } catch (error) {
+            console.error('[events] :', error)
+        }
+    }
+
+    useEffect(() => {
+        getEvents()
+    }, [])
 
     return (
         <Styles.Container id={LANDING_PAGE_NAVIGATION.event}>
@@ -21,11 +59,11 @@ const LPEvent: React.FC = () => {
             </Styles.Subtitle>
 
             <HighlightCard
-                title={currentEvent.title}
+                title={nextEvent.title}
+                imageBg={nextEvent.banner}
                 actionName="Marcar presença"
-                imageBg={currentEvent.banner}
-                description={currentEvent.description}
-                action={() => {}}
+                description={nextEvent.contentHTML}
+                knowMoreAction={() => {}}
                 onClick={() => {}}
             />
 
@@ -35,7 +73,7 @@ const LPEvent: React.FC = () => {
                         key={index}
                         title={item.title}
                         imageBg={item.banner}
-                        description={item.description}
+                        description={item.contentHTML}
                         action={() => {}}
                     />
                 ))}

@@ -10,10 +10,12 @@ const Title = styled.h1`
     ${tw`text-xl font-semibold mb-2`}
 `
 
-const Subtitle = styled.h4``
+const Subtitle = styled.h4`
+    ${tw`sm:text-center`}
+`
 
 const Button = styled(AppButton)`
-    ${tw`w-2/5 my-8`}
+    ${tw`w-2/5 my-8 sm:w-full`}
 `
 
 export default {

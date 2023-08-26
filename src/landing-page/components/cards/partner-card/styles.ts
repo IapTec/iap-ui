@@ -14,14 +14,14 @@ const Container = styled.article<IContainerProps>`
 `
 
 const Content = styled.section`
-    ${tw`p-4 flex flex-col items-center rounded-b-2xl`}
+    ${tw`p-4 w-full flex flex-col items-center rounded-b-2xl`}
     backdrop-filter: blur(1.5px);
     background: rgba(44, 44, 44, 0.7);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 `
 
 const Text = styled.p`
-    ${tw`w-full`}
+    ${tw`w-full sm:text-center`}
 `
 
 const Button = styled(AppButton)`

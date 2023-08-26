@@ -21,7 +21,7 @@ const Group = styled.section`
 `
 
 const Link = styled.a`
-    ${tw`ml-4 cursor-pointer relative text-sm`}
+    ${tw`ml-4 cursor-pointer relative`}
 
     &:hover,
     &:last-of-type {

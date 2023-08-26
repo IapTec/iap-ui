@@ -79,10 +79,10 @@ const LPFooter: React.FC = () => {
             <Styles.Section>
                 <Styles.Container>
                     <Styles.View>
-                        <Styles.Image src={images.Logo} />
+                        <Styles.Image src={images.LogoHorizontalWhite} />
                         <Styles.Text className="sm:text-center">
-                            Pessoas incríveis com processos e visão clara,
-                            constroem produtos sensacionais!
+                            Mãos que abençoam, corações que cuidam; Nosso
+                            chamado é do reino!
                         </Styles.Text>
                     </Styles.View>
 
@@ -105,12 +105,17 @@ const LPFooter: React.FC = () => {
                         ))}
                     </Styles.ItemsContainer>
                 </Styles.Container>
+
+                <Styles.PartnerContainer>
+                    <Styles.Text>Desenvolvido em parceria com:</Styles.Text>
+                    <Styles.PartnerImage src={images.UxnocodeLogo} />
+                </Styles.PartnerContainer>
             </Styles.Section>
 
             <Styles.Footer>
                 <Styles.Text className="mr-auto sm:text-center sm:text-sm sm:mb-4">
-                    ® 2023 uxnocode.com | CNPJ: 46.132.525/0001-81 - Todos os
-                    direitos reservados.
+                    ® 2023 institutoapocalipse.com - Todos os direitos
+                    reservados.
                 </Styles.Text>
 
                 <LPSocialMedia />

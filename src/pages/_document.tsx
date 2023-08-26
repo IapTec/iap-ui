@@ -9,6 +9,7 @@ import Document, {
 import React, { ReactElement } from 'react'
 import { ServerStyleSheet } from 'styled-components'
 import { ComponentsEnhancer } from 'next/dist/shared/lib/utils'
+import enviroments from '@/config/enviroments'
 
 type ContextType = DocumentContext
 type InitalPropsType = DocumentInitialProps
@@ -56,6 +57,21 @@ export default class MyDocument extends Document {
                         href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
                         rel="stylesheet"
                     />
+
+                    <script
+                        async
+                        src={`https://www.googletagmanager.com/gtag/js?id=${enviroments.analytics_id}`}
+                    ></script>
+
+                    <script
+                        dangerouslySetInnerHTML={{
+                            __html: `
+                                window.dataLayer = window.dataLayer || [];
+                                function gtag(){dataLayer.push(arguments);}
+                                gtag('js', new Date());
+                                gtag('config', '${enviroments.analytics_id}');`
+                        }}
+                    ></script>
 
                     <link rel="shortcut icon" href="/favicon.png" />
                 </Head>

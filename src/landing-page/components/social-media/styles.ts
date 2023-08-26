@@ -10,7 +10,7 @@ const Icon = styled.i`
 
     &:hover {
         transform: scale(0.94);
-        color: ${({ theme }) => theme.colors.secondary};
+        color: ${({ theme }) => theme.colors.primary};
     }
 `
 

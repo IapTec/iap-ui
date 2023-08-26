@@ -44,7 +44,12 @@ const LPNews: React.FC = () => {
                 onSelect={item => setCurrentCategory(item)}
             />
 
-            <HighlightCard
+            <Styles.Subtitle>
+                - Em breve você estará por dentro de todas as notícias da região
+                -
+            </Styles.Subtitle>
+
+            {/* <HighlightCard
                 title={currentNews.title}
                 actionName="Ver detalhe"
                 imageBg={currentNews.banner}
@@ -63,7 +68,7 @@ const LPNews: React.FC = () => {
                         action={() => {}}
                     />
                 ))}
-            </Styles.Grid>
+            </Styles.Grid> */}
         </Styles.Container>
     )
 }

@@ -11,7 +11,7 @@ const axiosFactory = (url: string = '', headers?: AxiosRequestHeaders) =>
         }
     })
 
-export const httpClient = axiosFactory(enviroments.apiUrl)
+export const httpClient = axiosFactory('')
 
 httpClient.interceptors.request.use(config => {
     config.headers = config.headers ?? {}

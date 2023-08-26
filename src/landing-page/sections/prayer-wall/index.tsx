@@ -1,8 +1,8 @@
 import Styles from './styles'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { useWindowSize } from '@/hooks/window-size.hook'
+import { FreeMode, Scrollbar, Mousewheel } from 'swiper'
 import React, { useEffect, useRef, useState } from 'react'
-import { AlertService } from '@/services/common/alert.service'
-import { FreeMode, Scrollbar, Mousewheel } from 'swiper/modules'
 import { PrayerService } from '@/firebase/services/prayer.service'
 import PrayerCard from '@/landing-page/components/cards/prayer-card'
 import { ISelectItem } from '@/components/@interface/select.interface'
@@ -14,7 +14,6 @@ import LPCategoryControl, {
     defaultCategoryControl
 } from '@/landing-page/components/category-control'
 
-const alertService = new AlertService()
 const prayerService = new PrayerService()
 
 const LPPrayerWall: React.FC = () => {
@@ -22,6 +21,8 @@ const LPPrayerWall: React.FC = () => {
     const [requests, setRequests] = useState<IPrayerWallResponse[]>([])
 
     const swiperRef = useRef<any>(null)
+    const { isMobile } = useWindowSize()
+    const slidesPerView = isMobile ? 1 : 4
     const category: ISelectItem[] = PRAYER_CATEGORY_ITEMS
 
     const handleCloseModal = () => setIsOpen(false)
@@ -39,20 +40,20 @@ const LPPrayerWall: React.FC = () => {
         return filterByCategory && active
     })
 
-    const getPrayerWall = async () => {
-        try {
-            const response = await prayerService.getAll()
-            setRequests(response)
-        } catch (error) {
-            alertService.error()
-        }
-    }
-
     const getReason = (item: IPrayerWallResponse) => {
         const category = PRAYER_CATEGORY_ITEMS.find(
             ({ value }) => value == item.category.id
         )
         return category?.label || ''
+    }
+
+    const getPrayerWall = async () => {
+        try {
+            const response = await prayerService.getAll()
+            setRequests(response)
+        } catch (error) {
+            console.error('[prayer wall] :', error)
+        }
     }
 
     useEffect(() => {
@@ -90,9 +91,9 @@ const LPPrayerWall: React.FC = () => {
                     freeMode={true}
                     scrollbar={true}
                     mousewheel={true}
-                    slidesPerView={4}
                     spaceBetween={12}
                     className="my-12"
+                    slidesPerView={slidesPerView}
                     modules={[FreeMode, Scrollbar, Mousewheel]}
                     onSwiper={swiper => (swiperRef.current = swiper)}
                 >
